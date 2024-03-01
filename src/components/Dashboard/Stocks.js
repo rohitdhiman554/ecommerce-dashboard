@@ -40,14 +40,14 @@ const Stocks = () => {
 
     return (
         <div className="w-full">
-            <Card className="max-w-4xl h-full border-2 flex flex-col">
+            <Card className="max-w-4xl flex flex-col">
                 <span className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
                     Overall Sales
                 </span>
                 <p className="text-tremor-metric font-semibold text-tremor-content-strong dark:text-dark-tremor-content-strong">
                     6,568
                 </p>
-                <div className="flex flex-col gap-6 mt-6 ">
+                <div className="flex flex-col gap-6 p-2">
                     <div className="flex items-center justify-center space-x-6">
                         <DonutChart
                             showTooltip
@@ -88,7 +88,7 @@ const Stocks = () => {
                                     <span className="text-sm">{value ? value.growthRate : '--'}</span>
                                 </div>
                             </Card>
-                       </div>
+                        </div>
                     </div>
                 </div>
 
