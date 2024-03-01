@@ -88,11 +88,7 @@ const Stocks = () => {
                                     <span className="text-sm">{value ? value.growthRate : '--'}</span>
                                 </div>
                             </Card>
-
-
-
-
-                        </div>
+                       </div>
                     </div>
                 </div>
 
