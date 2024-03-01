@@ -7,7 +7,7 @@ import Traffic from './components/Dashboard/Traffic';
 
 function App() {
   return (
-    <div className='w-full flex-col h-full gap-5 flex  p-4'>
+    <div className='w-full flex-col h-full gap-5 flex p-4 m-5'>
       <div className='flex w-full'>
         <Revenue />
         <Stocks />
