@@ -8,7 +8,7 @@ import {
 
 export default function Sales() {
     return (
-        <div className="flex gap-6 flex-col">
+        <div className="flex gap-6 flex-col w-full">
             <div className="flex gap-6">
                 <Card className="max-w-4xl">
                     <Flex>

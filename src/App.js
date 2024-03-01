@@ -1,6 +1,7 @@
 import './App.css';
 import Revenue from './components/Dashboard/Revenue';
 import Sales from './components/Dashboard/Sales';
+import ShoppingRate from './components/Dashboard/ShoppingRate';
 import Stocks from './components/Dashboard/Stocks';
 
 function App() {
@@ -10,7 +11,10 @@ function App() {
         <Revenue />
         <Stocks />
       </div>
-      <Sales />
+      <div className='flex w-full'>
+        <Sales />
+        <ShoppingRate />
+      </div>
     </div>
   );
 }
