@@ -21,7 +21,7 @@ const dataFormatter = (number) =>
 
 export function Traffic() {
     return (
-        <Card className='w-[98%]'>
+        <Card className='w-full'>
             <Title>Ecommerce Industry Traffic Trend-2023</Title>
             <Text>From Jan 2023 - Dec 2023</Text>
             <LineChart
