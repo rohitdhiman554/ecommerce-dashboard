@@ -16,7 +16,7 @@ function App() {
         <Sales />
         <ShoppingRate />
       </div>
-      {/* <Traffic /> */}
+      <Traffic />
     </div >
   );
 }
