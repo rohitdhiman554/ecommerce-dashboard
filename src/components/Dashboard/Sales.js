@@ -14,7 +14,7 @@ export default function Sales() {
                 <Flex>
                     <div className="flex flex-col">
                         <span className="text-lg text-black font-semibold">
-                            
+
                             E-Commerce Overview
                         </span>
                         <span className="text-sm">
@@ -24,8 +24,8 @@ export default function Sales() {
 
                 </Flex>
 
-                <div className="mt-6 flex gap-4">
-                    <Card className="max-w-[35%] space-y-4">
+                <div className="mt-6 flex md:flex-row flex-col gap-4">
+                    <Card className="max-w-xs space-y-4">
 
                         <div>
                             <span className="font-medium">Total Orders</span>
@@ -48,29 +48,27 @@ export default function Sales() {
                         </div>
                     </Card>
                     <Card>
-                        <div className="flex flex-col gap-4">
-                            <div>
-                                <span className="font-medium">Sales</span>
-                                <div className="flex gap-4">
-                                    <div>
+                        <div className="flex flex-col gap-3">
+                            <span className="font-medium">Sales</span>
+                            <div className="flex sm:flex-row flex-col gap-1 sm:gap-4">
+                                <div>
+                                    <Metric>$ 34,743</Metric>
+                                    <Text>Received last month</Text>
+                                </div>
+                                <div className="w-px bg-[#E0DEF7]" />
+                                <div>
+                                    <div className="flex gap-2">
                                         <Metric>$ 34,743</Metric>
-                                        <Text>Received last month</Text>
+                                        <Badge color="indigo" size="xs"  >
+                                            +70.96%
+                                        </Badge>
                                     </div>
-                                    <div className="w-px bg-[#E0DEF7]" />
-                                    <div>
-                                        <div className="flex gap-2">
-                                            <Metric>$ 34,743</Metric>
-                                            <Badge color="indigo" size="sm">
-                                                +70.96%
-                                            </Badge>
-                                        </div>
-                                        <Text>Received this month</Text>
-                                    </div>
+                                    <Text>Received this month</Text>
                                 </div>
                             </div>
                             <hr />
                             <div>
-                                <div className="flex gap-4">
+                                <div className="flex sm:flex-row flex-col sm:gap-4 gap-1">
                                     <div>
                                         <Metric className="text-red-500">$ 34,743</Metric>
                                         <Text>Loss</Text>

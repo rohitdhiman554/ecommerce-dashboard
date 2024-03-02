@@ -40,14 +40,14 @@ const Stocks = () => {
 
     return (
         <div className="w-full">
-            <Card className="max-w-4xl flex flex-col">
+            <Card className="max-w-4xl flex flex-col h-full">
                 <span className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
                     Overall Sales
                 </span>
                 <p className="text-tremor-metric font-semibold text-tremor-content-strong dark:text-dark-tremor-content-strong">
                     6,568
                 </p>
-                <div className="flex flex-col gap-6 p-2">
+                <div className="flex flex-col gap-6">
                     <div className="flex items-center justify-center space-x-6">
                         <DonutChart
                             showTooltip
@@ -58,18 +58,18 @@ const Stocks = () => {
                             index="name"
                             valueFormatter={dataFormatter}
                             colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia']}
-                            className="w-40"
+                            className="w-full md:w-40"
                             onValueChange={(v) => setValue(v)}
                         />
 
                         <Legend
                             categories={['New York', 'London', 'Hong Kong', 'San Francisco', 'Singapore']}
                             colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia']}
-                            className="max-w-xs"
+                            className="md:max-w-md max-w-xs font-medium"
                         />
                     </div>
                     <div className="w-full h-full mt-5">
-                        <div className="flex gap-5">
+                        <div className="flex md:flex-row flex-col md:gap-5 gap-4">
                             <Card>
                                 <div className="flex flex-col">
                                     <span className="text-lg font-semibold">City Name</span>

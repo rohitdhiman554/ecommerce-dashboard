@@ -23,7 +23,7 @@ export default function Example() {
 
 
     return (
-        <div className="w-full h-full">
+        <div className="w-full">
             <Card className="max-w-4xl">
                 <span className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
                     Total Transactions
@@ -37,7 +37,7 @@ export default function Example() {
                     categories={['transactions']}
                     colors={['blue']}
                     valueFormatter={dataFormatter}
-                    yAxisWidth={80}
+                    yAxisWidth={20}
                     onValueChange={(v) => console.log(v)}
                 />
 
