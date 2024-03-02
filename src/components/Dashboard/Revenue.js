@@ -1,27 +1,15 @@
 import { BarChart, Card } from "@tremor/react";
 import { useState } from "react";
+import { REVENUE_DATA } from "../../utils/constants";
 
-const chartdata = [
-    { name: "January", transactions: 305 },
-    { name: "February", transactions: 231 },
-    { name: "March", transactions: 267 },
-    { name: "April", transactions: 236 },
-    { name: "May", transactions: 338 },
-    { name: "June", transactions: 274 },
-    { name: "July", transactions: 91 },
-    { name: "August", transactions: 337 },
-    { name: "September", transactions: 27 },
-    { name: "October", transactions: 152 },
-    { name: "November", transactions: 296 },
-    { name: "December", transactions: 119 },
-];
-
-export default function Example() {
+export default function Revenue() {
     const [minTransactions, setMinTransactions] = useState(0);
-    const dataFormatter = (number) => Intl.NumberFormat('us').format(number).toString();
+    const dataFormatter = (number) =>
+        Intl.NumberFormat("us").format(number).toString();
 
-
-    const filteredData = chartdata.filter(item => item.transactions >= minTransactions);
+    const filteredData = REVENUE_DATA.filter(
+        (item) => item.transactions >= minTransactions
+    );
 
     return (
         <div className="w-full">
@@ -47,8 +35,8 @@ export default function Example() {
                 <BarChart
                     data={filteredData}
                     index="name"
-                    categories={['transactions']}
-                    colors={['blue']}
+                    categories={["transactions"]}
+                    colors={["blue"]}
                     valueFormatter={dataFormatter}
                     yAxisWidth={20}
                     onValueChange={(v) => console.log(v)}

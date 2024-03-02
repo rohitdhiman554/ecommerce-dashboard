@@ -1,32 +1,22 @@
-import {
-    Badge,
-    Card,
-    Flex,
-    Metric,
-    Text,
-} from "@tremor/react";
+import { Badge, Card, Flex, Metric, Text } from "@tremor/react";
 
 export default function Sales() {
     return (
-
         <div className="flex gap-6 w-full">
             <Card className="max-w-4xl">
                 <Flex>
                     <div className="flex flex-col">
                         <span className="text-lg text-black font-semibold">
-
                             E-Commerce Overview
                         </span>
                         <span className="text-sm">
                             Sales and orders overview for the selected period.
                         </span>
                     </div>
-
                 </Flex>
 
                 <div className="mt-6 flex md:flex-row flex-col gap-4">
                     <Card className="max-w-xs space-y-4">
-
                         <div>
                             <span className="font-medium">Total Orders</span>
                         </div>
@@ -59,7 +49,7 @@ export default function Sales() {
                                 <div>
                                     <div className="flex gap-2">
                                         <Metric>$ 34,743</Metric>
-                                        <Badge color="indigo" size="xs"  >
+                                        <Badge color="indigo" size="xs">
                                             +70.96%
                                         </Badge>
                                     </div>
@@ -84,9 +74,6 @@ export default function Sales() {
                     </Card>
                 </div>
             </Card>
-
-
         </div>
-
     );
 }

@@ -1,4 +1,4 @@
-import { Card, ProgressCircle, Subtitle, Title } from "@tremor/react"
+import { Card, ProgressCircle, Subtitle, Title } from "@tremor/react";
 
 const ShoppingRate = () => {
     return (
@@ -11,8 +11,15 @@ const ShoppingRate = () => {
                             <Title className="font-bold">Growth Units</Title>
                             <Subtitle>Total growth units available</Subtitle>
                             <div className="mt-8">
-                                <ProgressCircle value={75} size="xl" strokeWidth={10} color="green">
-                                    <span className="text-lg font-semibold text-slate-700">75%</span>
+                                <ProgressCircle
+                                    value={75}
+                                    size="xl"
+                                    strokeWidth={10}
+                                    color="green"
+                                >
+                                    <span className="text-lg font-semibold text-slate-700">
+                                        75%
+                                    </span>
                                 </ProgressCircle>
                             </div>
                         </div>
@@ -22,15 +29,23 @@ const ShoppingRate = () => {
                             <Title className="font-bold">Loss Units</Title>
                             <Subtitle>Total loss units available</Subtitle>
                             <div className="mt-8">
-                                <ProgressCircle value={25} size="xl" strokeWidth={10} color="red">
-                                    <span className="text-lg font-semibold text-slate-700">25%</span>
+                                <ProgressCircle
+                                    value={25}
+                                    size="xl"
+                                    strokeWidth={10}
+                                    color="red"
+                                >
+                                    <span className="text-lg font-semibold text-slate-700">
+                                        25%
+                                    </span>
                                 </ProgressCircle>
                             </div>
                         </div>
                     </Card>
                 </div>
-            </Card></div>
-    )
-}
+            </Card>
+        </div>
+    );
+};
 
-export default ShoppingRate
+export default ShoppingRate;

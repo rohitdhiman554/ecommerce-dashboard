@@ -1,22 +1,15 @@
 import { Card, DonutChart, Legend } from "@tremor/react";
 import { useState } from "react";
-
-const datahero = [
-    { name: "New York", sales: 980, growthRate: "5%" },
-    { name: "London", sales: 456, growthRate: "3%" },
-    { name: "Hong Kong", sales: 390, growthRate: "2%" },
-    { name: "San Francisco", sales: 240, growthRate: "4%" },
-    { name: "Singapore", sales: 190, growthRate: "6%" },
-];
+import { STOCKS_DATA } from "../../utils/constants";
 
 const Stocks = () => {
     const [value, setValue] = useState(null);
-    const [selectedGrowthRate, setSelectedGrowthRate] = useState('0%');
+    const [selectedGrowthRate, setSelectedGrowthRate] = useState("0%");
 
     const dataFormatter = (number) =>
-        `$ ${Intl.NumberFormat('us').format(number).toString()}`;
+        `$ ${Intl.NumberFormat("us").format(number).toString()}`;
 
-    const filteredData = datahero.filter(item => {
+    const filteredData = STOCKS_DATA.filter((item) => {
         const itemGrowth = parseInt(item.growthRate, 10);
         const selectedGrowth = parseInt(selectedGrowthRate, 10);
         return itemGrowth >= selectedGrowth;
@@ -57,14 +50,14 @@ const Stocks = () => {
                             category="sales"
                             index="name"
                             valueFormatter={dataFormatter}
-                            colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia']}
+                            colors={["blue", "cyan", "indigo", "violet", "fuchsia"]}
                             className="w-full md:w-40"
                             onValueChange={(v) => setValue(v)}
                         />
 
                         <Legend
-                            categories={filteredData.map(item => item.name)}
-                            colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia']}
+                            categories={filteredData.map((item) => item.name)}
+                            colors={["blue", "cyan", "indigo", "violet", "fuchsia"]}
                             className="md:max-w-md max-w-xs font-medium"
                         />
                     </div>
@@ -73,19 +66,23 @@ const Stocks = () => {
                             <Card>
                                 <div className="flex flex-col">
                                     <span className="text-lg font-semibold">City Name</span>
-                                    <span className="text-sm">{value ? value.name : '--'}</span>
+                                    <span className="text-sm">{value ? value.name : "--"}</span>
                                 </div>
                             </Card>
                             <Card>
                                 <div className="flex flex-col">
                                     <span className="text-lg font-semibold">Total Sales</span>
-                                    <span className="text-sm">{value ? dataFormatter(value.sales) : '--'}</span>
+                                    <span className="text-sm">
+                                        {value ? dataFormatter(value.sales) : "--"}
+                                    </span>
                                 </div>
                             </Card>
                             <Card>
                                 <div className="flex flex-col">
                                     <span className="text-lg font-semibold">Growth Rate</span>
-                                    <span className="text-sm">{value ? value.growthRate : '--'}</span>
+                                    <span className="text-sm">
+                                        {value ? value.growthRate : "--"}
+                                    </span>
                                 </div>
                             </Card>
                         </div>
@@ -94,6 +91,6 @@ const Stocks = () => {
             </Card>
         </div>
     );
-}
+};
 
 export default Stocks;
