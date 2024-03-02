@@ -5,7 +5,7 @@ const ShoppingRate = () => {
         <div className="w-full">
             <Card className="max-w-4xl flex flex-col gap-2 justify-around">
                 <Title>Shopping Cart Abandonment Rate</Title>
-                <div className="flex w-full gap-10">
+                <div className="flex sm:flex-row flex-col w-full my-2 gap-10">
                     <Card>
                         <div className="flex flex-col">
                             <Title className="font-bold">Units</Title>
