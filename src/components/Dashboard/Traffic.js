@@ -1,6 +1,9 @@
+import React, { useState } from 'react';
 import { Card, LineChart, Text, Title } from '@tremor/react';
-import React from 'react'
 
+
+
+const dataCategories = ['SearchPaid', 'Referrals', 'Direct', 'SemiAnalysis'];
 const chartdata = [
     { "date": "Jan 23", "SearchPaid": 73.76, "Referrals": 28.67, "Direct": 2.7, "SemiAnalysis": 11.23 },
     { "date": "Feb 23", "SearchPaid": 62.48, "Referrals": 48.7, "Direct": 24.68, "SemiAnalysis": 59.22 },
@@ -15,21 +18,56 @@ const chartdata = [
     { "date": "Nov 23", "SearchPaid": 82.55, "Referrals": 2.16, "Direct": 31.39, "SemiAnalysis": 48.31 },
     { "date": "Dec 23", "SearchPaid": 90.89, "Referrals": 60.71, "Direct": 79.52, "SemiAnalysis": 78.99 }
 ]
-
-const dataFormatter = (number) =>
-    `$${Intl.NumberFormat('us').format(number).toString()}`;
-
 export function Traffic() {
+    const [activeCategories, setActiveCategories] = useState(dataCategories);
+
+    const toggleCategory = (category) => {
+        if (activeCategories.includes(category)) {
+            setActiveCategories(activeCategories.filter(c => c !== category));
+        } else {
+            setActiveCategories([...activeCategories, category]);
+        }
+    };
+
+    const dataFormatter = (number) => `$${Intl.NumberFormat('us').format(number).toString()}`;
+
+
+    const filteredChartData = chartdata.map(entry => {
+        const filteredEntry = { date: entry.date };
+        activeCategories.forEach(category => {
+            if (entry[category] !== undefined) {
+                filteredEntry[category] = entry[category];
+            }
+        });
+        return filteredEntry;
+    });
+
     return (
         <Card className='w-full'>
             <Title>Ecommerce Industry Traffic Trend-2023</Title>
             <Text>From Jan 2023 - Dec 2023</Text>
+            <div className="flex flex-wrap my-4">
+                {dataCategories.map(category => (
+                    <div key={category} className="flex items-center mr-4 mb-2">
+                        <input
+                            id={`checkbox-${category}`}
+                            type="checkbox"
+                            checked={activeCategories.includes(category)}
+                            onChange={() => toggleCategory(category)}
+                            className="form-checkbox h-5 w-5 text-blue-600"
+                        />
+                        <label htmlFor={`checkbox-${category}`} className="ml-2 text-sm">
+                            {category}
+                        </label>
+                    </div>
+                ))}
+            </div>
             <LineChart
                 className="h-80"
-                data={chartdata}
+                data={filteredChartData}
                 index="date"
-                categories={['SearchPaid', 'Referrals', 'Direct']}
-                colors={['indigo', 'rose', 'blue']}
+                categories={activeCategories}
+                colors={['indigo', 'rose', 'blue', 'green']}
                 valueFormatter={dataFormatter}
                 yAxisWidth={60}
                 onValueChange={(v) => console.log(v)}
@@ -38,4 +76,4 @@ export function Traffic() {
     );
 }
 
-export default Traffic
+export default Traffic;
