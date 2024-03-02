@@ -8,7 +8,7 @@ const ShoppingRate = () => {
                 <div className="flex sm:flex-row flex-col w-full my-2 gap-10">
                     <Card>
                         <div className="flex flex-col">
-                            <Title className="font-bold">Units</Title>
+                            <Title className="font-bold">Growth Units</Title>
                             <Subtitle>Total growth units available</Subtitle>
                             <div className="mt-8">
                                 <ProgressCircle value={75} size="xl" strokeWidth={10} color="green">
@@ -19,7 +19,7 @@ const ShoppingRate = () => {
                     </Card>
                     <Card>
                         <div className="flex flex-col">
-                            <Title className="font-bold">Units</Title>
+                            <Title className="font-bold">Loss Units</Title>
                             <Subtitle>Total loss units available</Subtitle>
                             <div className="mt-8">
                                 <ProgressCircle value={25} size="xl" strokeWidth={10} color="red">

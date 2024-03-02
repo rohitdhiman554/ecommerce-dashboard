@@ -11,12 +11,11 @@ const datahero = [
 
 const Stocks = () => {
     const [value, setValue] = useState(null);
-    const [selectedGrowthRate, setSelectedGrowthRate] = useState('0%'); // New state for selected growth rate
+    const [selectedGrowthRate, setSelectedGrowthRate] = useState('0%');
 
     const dataFormatter = (number) =>
         `$ ${Intl.NumberFormat('us').format(number).toString()}`;
 
-    // Function to filter data based on selected growth rate
     const filteredData = datahero.filter(item => {
         const itemGrowth = parseInt(item.growthRate, 10);
         const selectedGrowth = parseInt(selectedGrowthRate, 10);
@@ -26,7 +25,7 @@ const Stocks = () => {
     return (
         <div className="w-full">
             <Card className="max-w-4xl flex flex-col h-full">
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center ">
                     <div>
                         <span className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
                             Overall Sales

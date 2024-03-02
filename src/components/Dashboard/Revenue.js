@@ -26,7 +26,7 @@ export default function Example() {
     return (
         <div className="w-full">
             <Card className="max-w-4xl">
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center">
                     <span className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
                         Total Transactions
                     </span>
